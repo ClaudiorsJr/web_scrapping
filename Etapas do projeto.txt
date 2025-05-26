@@ -1,0 +1,28 @@
+Etapas de realização do projeto
+
+1) Instalar a versão do python utilizando o pyenv utilizando os comandos:
+    a) pyenv install [versao python]
+    b) pyenv local [versao a ser utilizada]
+2) Criar o ambiente virtual do projeto com o comando "python -m venv venv"
+3) Criar o arquivo ".gitignore", copiar e colar o conteúdo do site "https://www.toptal.com/developers/gitignore"
+4) Comandos GIT para sincronizar com o GitHub:
+    a) echo "# test" >> README.md
+    b) git init
+    c) git add README.md
+    d) git commit -m "first commit"
+    e) git remote add origin https://github.com/[caminho do repositório]
+    f) git push -u origin master
+
+5) Comandos para iniciar um novo projeto de web scraping utilizando o scrapy: 
+    a) scrapy startproject [nomedapasta]
+    b) scrapy genspider [nomedosite] [urldapagina]
+    c) scrapy shell (para abrir um terminal shell e testar os comandos de scrapping)
+        principais comandos:
+        - fetch ('urldapagina')
+        - response.css('HTML a ser crawleado (ex. div.algumacoisa)')
+        - response.css('HTML a ser crawleado (ex. div.algumacoisa)').get() --> pegar um elemento da página
+        - response.css('HTML a ser crawleado (ex. div.algumacoisa)').getall() ---> pegar todos os elementos da lista
+    d)  scrapy crawl [nomedosite] -o [nomedoarquivo].[formato - ex. jsonl, csv]
+
+Utilizar o header com o user agent na requisição
+fetch('https://lista.mercadolivre.com.br/tenis-corrida-masculino', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'})
